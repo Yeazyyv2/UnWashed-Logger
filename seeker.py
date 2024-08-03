@@ -151,7 +151,7 @@ def send_telegram(content, msg_type):
 
 
 def template_select(site):
-	utils.print(f'{Y}[!] Select a Template :{W}\n')
+	utils.print(f'{Y}[!] Bir site görünümü seçin:{W}\n')
 
 	with open(TEMPLATES_JSON, 'r') as templ:
 		templ_info = templ.read()
