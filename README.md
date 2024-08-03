@@ -1,5 +1,3 @@
-<p align="center"><img src="https://i.imgur.com/DIpuNTI.jpg"></p>
-
 <p align="center">
     <a href="https://twitter.com/thewhiteh4t">
       <img src="https://img.shields.io/badge/-TWITTER-black?logo=twitter&style=for-the-badge">
@@ -33,29 +31,29 @@
   </a>
 </p>
 
-Concept behind Seeker is simple, just like we host phishing pages to get credentials why not host a fake page that requests your location like many popular location based websites. Read more on <a href="https://thewhiteh4t.github.io"> thewhiteh4t's Blog </a>.Seeker Hosts a fake website which asks for Location Permission and if the target allows it, we can get :
+Concept behind Seeker is simple, just like we host phishing pages to get credentials why not host a fake page that requests your location like many popular location based websites. Read more on <a href="https://thewhiteh4t.github.io"> thewhiteh4t's Blog </a>.Seeker Hosts a fake website which asks for Location 
+Bu toolu kullanarak şu bilgileri bulabilirsiniz:
 
-* Longitude
-* Latitude
-* Accuracy
-* Altitude - Not always available
-* Direction - Only available if user is moving
-* Speed - Only available if user is moving
+Boylam
+Eylem
+Kesinlik
+Rakım
+Yön
+Hız
 
-Along with Location Information we also get **Device Information** without any permissions :
+Bu toolu kullanarak cihaz hakkında şu bilgileri bulabilirsiniz:
 
-* Unique ID using Canvas Fingerprinting
-* Device Model - Not always available
-* Operating System
-* Platform
-* Number of CPU Cores - Approximate Results
-* Amount of RAM - Approximate Results
-* Screen Resolution
-* GPU information
-* Browser Name and Version
-* Public IP Address
-* Local IP Address
-* Local Port
+Cihaz Modeli
+Işletim Sistemi
+Platform
+CPU Çekirdek Sayısı
+RAM Sayısı
+Ekran Çözünürlüğü
+GPU Bilgileri
+Tarayıcı Bilgileri
+Public IP Addresi
+Local IP Addresi
+Local Port Adresi
 
 **Automatic IP Address Reconnaissance** is performed after the above information is received.
 
@@ -74,32 +72,32 @@ Along with Location Information we also get **Device Information** without any p
   * Browser - Some browsers block javascripts
   * GPS Calibration - If GPS is not calibrated you may get inaccurate results and this is very common
 
-## Templates
+## Site Görünümleri
 
-Available Templates : 
+Mevcut Site Görünümleri: 
 
-* NearYou
-* Google Drive (Suggested by @Akaal_no_one)
-* WhatsApp (Suggested by @Dazmed707)
-* Telegram
-* Zoom (Made by @a7maadf)
-* Google reCAPTCHA (Made by @MrEgyptian)
+NearYou
+Google Drive
+WhatsApp
+Telegram
+Zoom
+Google RECAPTCHA
 
 Create your own template ! 
 Steps to let you create your template is described in this [how-to](./createTemplate.md)
 
 Once your template is ready, **do not forget to propose it to the community via a PR (pull request)**
 
-## Tested On :
+## Şu Platformlarda Kullanılabilir:
 
-* Kali Linux
-* BlackArch Linux
-* Ubuntu
-* Fedora
-* Kali Nethunter
-* Termux
-* Parrot OS
-* OSX - Monterey v.12.0.1
+Kali Linux
+BlackArch Linux
+Ubuntu
+Fedora
+Kali Nethunter
+Termux
+Parrot OS
+OSX - Monterry
 
 ## Installation
 
