@@ -35,24 +35,41 @@ Concept behind Seeker is simple, just like we host phishing pages to get credent
 Bu toolu kullanarak şu bilgileri bulabilirsiniz:
 
 Boylam
+
 Eylem
+
 Kesinlik
+
 Rakım
+
 Yön
+
 Hız
+
+
 
 Bu toolu kullanarak cihaz hakkında şu bilgileri bulabilirsiniz:
 
 Cihaz Modeli
+
 Işletim Sistemi
+
 Platform
+
 CPU Çekirdek Sayısı
+
 RAM Sayısı
+
 Ekran Çözünürlüğü
+
 GPU Bilgileri
+
 Tarayıcı Bilgileri
+
 Public IP Addresi
+
 Local IP Addresi
+
 Local Port Adresi
 
 **Automatic IP Address Reconnaissance** is performed after the above information is received.
